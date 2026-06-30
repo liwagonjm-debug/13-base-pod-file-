@@ -1,0 +1,258 @@
+// VCIF 1
+SCENE "skeleton" {
+	EXPORTINFO {
+		SOURCEFILE = "C:/Work/NBA2KLive/scenes/Reflection_900poly/BenchReflection900ply_14.ma"
+		MAYAVERSION = "3.0.1"
+		EXPORTERVERSION = 3.0
+		USERNAME = "2klive"
+		COMPUTERNAME = "2KLIVE"
+		TIME = "21:13:55"
+		DATE = "07/01/18"
+		GOP_COUNT = 5000
+		VERTEX_COUNT = 5000
+	}
+	OBJECT "skeleton" {
+		MODEL = "skeleton"
+		POSITION = [ 0,0,0 ]
+		SCALE = [ 50,50,50 ]
+		ORIENTATION = [ 15,15,15 ]
+		ROTATION_ORDER = "XYZ"
+	}
+	MATERIAL "crap" {
+		SHADING_MODEL = "LAMBERT"
+		COLOR = [ 2,2,2,2 ]
+		INCANDESCENCE = [ 0,0,0,0 ]
+		DIFFUSE_DEGREE = 100.99000001192
+		CLAMP_U = "ON"
+		CLAMP_V = "ON"
+		MIRROR_U = "ON"
+		MIRROR_V = "ON"
+        TEXTURE _MAINTEX;
+        sampler2D _MainTexSampler = sampler_state
+{
+        Texture = <_MainTex_>;
+        Address_U = REPEAT ;
+        Address_V = WRAP ;
+        MinFilter = LINEAR ;
+        MagFilter = LINEAR ;
+        MipFilter = LINEAR ;
+	}
+	MODEL "skeleton" {
+		NODE "root" {
+			POSITION = [ 1,1,1 ]
+			NODE "r_hip_hinge_base" {
+				POSITION = [ -9.2290000916,-4.7089996338,0.25799998641 ]
+				NODE "r_femur" {
+					POSITION = [ 0,0,0 ]
+					NODE "r_knee_hinge" {
+						POSITION = [ -0.63943302631,-45.267028809,0.83817946911 ]
+						NODE "r_ankle" {
+							POSITION = [ -0.2334792912,-44.984603882,-5.8230161667 ]
+							NODE "r_ankle_end" {
+								POSITION = [ 4.4408920985e-14,15,5.4109491275e-14 ]
+							}
+						}
+					}
+				}
+			}
+			NODE "l_hip_hinge_base" {
+				POSITION = [ 9.2290000916,-4.7092142105,0.25798457861 ]
+				NODE "l_femur" {
+					POSITION = [ 0,0,0 ]
+					NODE "l_knee_hinge" {
+						POSITION = [ 0.41978272796,-45.268722534,0.88450014591 ]
+						NODE "l_ankle" {
+							POSITION = [ 0.065520703793,-44.990730286,-5.7798309326 ]
+							NODE "l_ankle_end" {
+								POSITION = [ 1.1723960561e-13,15,-8.5390021605e-14 ]
+							}
+						}
+					}
+				}
+			}
+			NODE "thorax" {
+				POSITION = [ 0,25.680000305,0.45399995327 ]
+				NODE "l_clavicle" {
+					POSITION = [ 4.2639119625,20.772138596,6.4360251427 ]
+					NODE "l_shoulder_hinge_base" {
+						POSITION = [ 16.997789783,1.6375222206,-7.1287608147 ]
+						NODE "l_humerus" {
+							POSITION = [ -0.14600000679,-2.0310001373,-0.11800000429 ]
+							NODE "l_elbow" {
+								POSITION = [ 23.155981064,-13.247518539,2.5344324112 ]
+								NODE "l_hand" {
+									POSITION = [ 18.482198715,-12.050331116,12.816741943 ]
+									NODE "l_hand_end" {
+										POSITION = [ 0,17,0 ]
+									}
+								}
+							}
+						}
+					}
+				}
+				NODE "head" {
+					POSITION = [ -3.155443997e-30,39.188037872,1.9545168877 ]
+					NODE "head_end" {
+						POSITION = [ 7.1860301658e-15,16.046527863,-1.7425640195e-13 ]
+					}
+				}
+				NODE "r_clavicle" {
+					POSITION = [ -4.2639100552,20.771999359,6.4360303879 ]
+					NODE "r_shoulder_hinge_base" {
+						POSITION = [ -16.997789383,1.6380000114,-7.1287660599 ]
+						NODE "r_humerus" {
+							POSITION = [ 0.14600000679,-2.0310001373,-0.11800000429 ]
+							NODE "r_elbow" {
+								POSITION = [ -23.15619278,-13.247628212,2.5344815254 ]
+								NODE "r_hand" {
+									POSITION = [ -18.482198715,-12.050000191,12.816700935 ]
+									NODE "r_hand_end" {
+										POSITION = [ 2.842170943e-14,17,0 ]
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		GOP "crapShape" {
+			MATERIAL = "crap"
+			VERTEX {
+				POSITION = [ 1,1,0 ]
+				DIFFUSE = [ 0,0,0,0 ]
+				NORMAL = [ 1,1,1 ]
+				TEXTURE = [ 2,0 ]
+				NODE = "r_ankle"
+				WEIGHT = 3000
+				POSITIONS {
+					LOCAL = [ 4,4,4 ]
+					WORLD = [ 4,4,4 ]
+				}
+				NODE_STRONGEST {
+					NAME = "r_ankle"
+					WEIGHT = 1500
+				}
+				NODE_LIST {
+					NODE {
+						NAME = "r_ankle"
+						WEIGHT = 0
+					}
+				}
+			}
+			VERTEX {
+				POSITION = [ 1,1,1 ]
+				DIFFUSE = [ 0,0,0,0 ]
+				NORMAL = [ 1,1,1 ]
+				TEXTURE = [ 2,0 ]
+				NODE = "l_ankle"
+				WEIGHT = 3000
+				POSITIONS {
+					LOCAL = [ 4,4,4 ]
+					WORLD = [ 4,4,4 ]
+				}
+				NODE_STRONGEST {
+					NAME = "l_ankle"
+					WEIGHT = 1500
+				}
+				NODE_LIST {
+					NODE {
+						NAME = "l_ankle"
+						WEIGHT = 0
+					}
+				}
+			}
+			VERTEX {
+				POSITION = [ 1,1,2 ]
+				DIFFUSE = [ 0,0,0,0 ]
+				NORMAL = [ 1,1,1 ]
+				TEXTURE = [ 2,0 ]
+				NODE = "head"
+				WEIGHT = 0
+				POSITIONS {
+					LOCAL = [ 4,4,6 ]
+					WORLD = [ 4,4,6 ]
+				}
+				NODE_STRONGEST {
+					NAME = "head"
+					WEIGHT = 0
+				}
+				NODE_LIST {
+					NODE {
+						NAME = "head"
+						WEIGHT = 0
+					}
+				}
+			}
+		}
+		GOP "crapShape" {
+			MATERIAL = "crap"
+			VERTEX {
+				POSITION = [ 1,1,0 ]
+				DIFFUSE = [ 0,0,0,0 ]
+				NORMAL = [ 1,1,1 ]
+				TEXTURE = [ 2,0 ]
+				NODE = "r_hand"
+				WEIGHT = 300
+				POSITIONS {
+					LOCAL = [ 4,4,4 ]
+					WORLD = [ 4,4,4 ]
+				}
+				NODE_STRONGEST {
+					NAME = "r_hand"
+					WEIGHT = 0
+				}
+				NODE_LIST {
+					NODE {
+						NAME = "r_hand"
+						WEIGHT = 0
+					}
+				}
+			}
+			VERTEX {
+				POSITION = [ 0,1,1 ]
+				DIFFUSE = [ 0,0,0,0 ]
+				NORMAL = [ 1,1,1 ]
+				TEXTURE = [ 2,0 ]
+				NODE = "l_hand"
+				WEIGHT = 300
+				POSITIONS {
+					LOCAL = [ 4,4,4 ]
+					WORLD = [ 4,4,4 ]
+				}
+				NODE_STRONGEST {
+					NAME = "l_hand"
+					WEIGHT = 0
+				}
+				NODE_LIST {
+					NODE {
+						NAME = "l_hand"
+						WEIGHT = 0
+					}
+				}
+			}
+			VERTEX {
+				POSITION = [ 1,1,2 ]
+				DIFFUSE = [ 0,0,0,0 ]
+				NORMAL = [ 1,1,1 ]
+				TEXTURE = [ 2,0 ]
+				NODE = "head"
+				WEIGHT = 0
+				POSITIONS {
+					LOCAL = [ 4,4,6 ]
+					WORLD = [ 4,4,6 ]
+				}
+				NODE_STRONGEST {
+					NAME = "head"
+					WEIGHT = 0
+				}
+				NODE_LIST {
+					NODE {
+						NAME = "head"
+						WEIGHT = 0
+					}
+				}
+			}
+		}
+	}
+}
